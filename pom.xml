@@ -197,37 +197,6 @@
 					<showDeprecation>true</showDeprecation>
 				</configuration>
 			</plugin>
-			<!-- Dependency addition plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>2.1</version>
-				<executions>
-					<execution>
-						<configuration>
-							<createDependencyReducedPom>false</createDependencyReducedPom>
-							<filters>
-								<filter>
-									<artifact>*:*</artifact>
-									<excludes>
-										<exclude>lib/**</exclude>
-										<exclude>templates/**</exclude>
-										<exclude>META-INF/*.xml</exclude>
-										<exclude>META-INF/*.txt</exclude>
-										<exclude>**/LICENSE</exclude>
-										<exclude>**/NOTICE</exclude>
-										<exclude>**/DEPENDENCIES</exclude>
-									</excludes>
-								</filter>
-							</filters>
-						</configuration>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
 
